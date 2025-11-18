@@ -1,0 +1,133 @@
+/* Reset-ish */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      sans-serif;
+    line-height: 1.5;
+    background: #f3f4f6;
+    color: #111827;
+  }
+  
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* Layout */
+  
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1.5rem;
+    background: rgba(17, 24, 39, 0.9);
+    color: #f9fafb;
+    backdrop-filter: blur(6px);
+  }
+  
+  .logo {
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+  .logo span {
+    color: #60a5fa;
+  }
+  
+  .main-nav {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.95rem;
+  }
+  .main-nav a {
+    padding: 0.25rem 0.5rem;
+    border-radius: 999px;
+  }
+  .main-nav a:hover {
+    background: rgba(249, 250, 251, 0.15);
+  }
+  
+  .btn-primary,
+  .btn-outline {
+    border-radius: 999px;
+    border: 1px solid #60a5fa;
+    padding: 0.35rem 0.9rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    background: #60a5fa;
+    color: #0b1120;
+    transition: transform 0.1s ease, box-shadow 0.1s ease,
+      background 0.1s ease, color 0.1s ease;
+  }
+  
+  .btn-outline {
+    background: transparent;
+    color: #e5e7eb;
+  }
+  
+  .btn-primary:hover,
+  .btn-outline:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.3);
+  }
+  
+  /* Sections */
+  
+  .section {
+    padding: 2.5rem 1.5rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .section h2 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Hero */
+  
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+    gap: 1.5rem;
+    align-items: stretch;
+  }
+  
+  .hero-text h1 {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .hero-text p {
+    margin-bottom: 1rem;
+    color: #4b5563;
+  }
+  
+  .hero-card {
+    background: #111827;
+    color: #e5e7eb;
+    padding: 1.25rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.6);
+  }
+  .hero-card h2 {
+    margin-bottom: 0.75rem;
+    font-size: 1.2rem;
+  }
+  .next-list {
+    list-style: none;
+  }
+  .next-list li + li {
+    margin-top: 0.4rem;
+  }
+  
+  /* Tasks */
+  
+  .task-input-area {
+  

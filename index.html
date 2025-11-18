@@ -2,34 +2,90 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Simple Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>My Timeline Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <header>
-    <h1>Welcome to My Simple Page</h1>
-    <p class="subtitle">This site is auto-generated for hosting practice.</p>
+  <header class="site-header">
+    <div class="logo">Job<span>Blocks</span></div>
+    <nav class="main-nav">
+      <a href="#today">今日</a>
+      <a href="#tasks">タスク</a>
+      <a href="#stats">統計</a>
+    </nav>
+    <button id="themeToggle" class="btn-outline">Dark</button>
   </header>
 
-  <section class="container">
-    <div class="card">
-      <h2>About Me</h2>
-      <p>Hello! This is a sample website built with HTML, CSS, and JavaScript.</p>
-      <p>Use this page to test your Netlify / Vercel / Azure deployments.</p>
-    </div>
+  <main>
+    <!-- Hero -->
+    <section id="today" class="section hero">
+      <div class="hero-text">
+        <h1>今日のタイムライン</h1>
+        <p>応募・面接・ES作成の時間をまとめて管理するシンプルなダッシュボード。</p>
+        <button id="openModal" class="btn-primary">今日の例を見る</button>
+      </div>
+      <div class="hero-card">
+        <h2>次の予定</h2>
+        <ul class="next-list">
+          <li>10:00  企業A ES 清書</li>
+          <li>14:00  企業B Webテスト</li>
+          <li>18:30  企業C 面接準備</li>
+        </ul>
+      </div>
+    </section>
 
-    <div class="card">
-      <h2>Click the Button</h2>
-      <button id="btn">Click Me</button>
-      <p id="message"></p>
-    </div>
-  </section>
+    <!-- Tasks -->
+    <section id="tasks" class="section">
+      <h2>タスク管理</h2>
+      <div class="task-input-area">
+        <input id="taskInput" type="text" placeholder="タスクを入力（例：企業D 説明会）">
+        <select id="taskTag">
+          <option value="all">タグなし</option>
+          <option value="es">ES</option>
+          <option value="interview">面接</option>
+          <option value="study">勉強</option>
+        </select>
+        <button id="addTask" class="btn-primary">追加</button>
+      </div>
 
-  <footer>
-    <p>© 2025 Sample Website</p>
-  </footer>
+      <div class="task-filters">
+        <button data-filter="all" class="filter-btn active">すべて</button>
+        <button data-filter="es" class="filter-btn">ES</button>
+        <button data-filter="interview" class="filter-btn">面接</button>
+        <button data-filter="study" class="filter-btn">勉強</button>
+      </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
+      <ul id="taskList" class="task-list">
+        <!-- JS で追加 -->
+      </ul>
+    </section>
+
+    <!-- Stats -->
+    <section id="stats" class="section">
+      <h2>簡単な統計</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <p class="stat-label">登録タスク</p>
+          <p id="statTotal" class="stat-value">0</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">完了タスク</p>
+          <p id="statDone" class="stat-value">0</p>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">未完了タスク</p>
+          <p id="statTodo" class="stat-value">0</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- モーダル -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close">×</button>
+      <h2>サンプルタイムライン</h2>
+      <ol>
+        <li>09:00〜11:00  ES 修正</li>
+        <li>13:00〜14:00  面接対策（想定質問まとめ）</li>
